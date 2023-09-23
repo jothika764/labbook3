@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script lang="JavaScript">
+        function openWin3(){
+            myWin=open(" ","displayWindow","width=500,height=400,status=yes,toolbar=yes,menubar=yes");
+            myWin.document.open();
+            myWin.document.write("<html><head><title>On-the-fly");
+            myWin.document.write("</title></head><body>");
+            myWin.document.write("<center><font size=+3>");
+            myWin.document.write("This HTML-document has been created");
+            myWin.document.write("with the help of JavaScript!");
+            myWin.document.write("</font></center>");
+            myWin.document.write("</body></html>");
+           
+            myWin.document.close();
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="On-the-fly" onclick="openWin3()">
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function evaluateSeries(terms) {
+  let result = 0;
+  let sign = 1;
+  let denominator = 1;
+
+  for (let i = 1; i <= terms; i++) {
+    const term = sign / denominator;
+    result += term;
+
+    // Update the sign and denominator for the next term
+    sign *= -1;
+    denominator += 2;
+  }
+
+  return result;
+}
+
+// Example usage:
+const numberOfTerms = 5; // Change this to the desired number of terms
+const seriesSum = evaluateSeries(numberOfTerms);
+
+console.log(`Sum of the series with ${numberOfTerms} terms: ${seriesSum}`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

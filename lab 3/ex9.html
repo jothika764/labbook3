@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Security Number Lookup</title>
+    <script>
+        function lookupState() {
+            // Get the first three digits from the input field
+            const inputSSN = document.getElementById("ssnInput").value;
+            const firstThreeDigits = inputSSN.substr(0, 3);
+
+            // Define an object that maps first three digits to states
+            const ssnToState = {
+                "001": "New Hampshire",
+                "002": "Maine",
+                // Add more mappings as needed
+            };
+
+            // Lookup the state or territory based on the input
+            const result = ssnToState[firstThreeDigits] || "State or territory not found";
+
+            // Display the result
+            document.getElementById("result").textContent = `Corresponding state or territory: ${result}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Social Security Number Lookup</h2>
+    <label for="ssnInput">Enter the first three digits of SSN:</label>
+    <input type="text" id="ssnInput" maxlength="3">
+    <button onclick="lookupState()">Search</button>
+    <p id="result"></p>
+</body>
+</html>

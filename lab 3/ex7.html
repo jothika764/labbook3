@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculatePaintCans(length, width, height) {
+  const roomArea = 2 * (length + width) * height; // Calculate the total wall area
+  const windowArea = 40; // Total window area in square feet
+  const doorArea = 20; // Total door area in square feet
+  const paintableArea = roomArea - (windowArea + doorArea); // Calculate the paintable area
+
+  const paintCoveragePerCan = 200; // Coverage of 1/2 gallon can of paint in square feet
+  const cansRequired = Math.ceil(paintableArea / paintCoveragePerCan); // Calculate the number of paint cans needed
+
+  return cansRequired;
+}
+
+// Example usage:
+const roomLength = 15; // Length of the room in feet
+const roomWidth = 10; // Width of the room in feet
+const roomHeight = 8; // Height of the room in feet
+
+const cansNeeded = calculatePaintCans(roomLength, roomWidth, roomHeight);
+
+console.log(`To paint the walls of the room, you will need ${cansNeeded} cans of paint.`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

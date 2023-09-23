@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Define a two-dimensional array to store sales figures
+const salesData = [
+  [1000, 1200, 800],
+  [900, 1100, 750],
+  [1200, 1300, 820],
+  [950, 1050, 780]
+];
+
+// Define region and month labels
+const regions = ["North", "Central", "South"];
+const months = ["January", "February", "March", "April"];
+
+// Initialize an array to store total sales for each region
+const totalSalesByRegion = [0, 0, 0];
+
+// Initialize an array to store total sales for each month
+const totalSalesByMonth = [0, 0, 0, 0];
+
+// Calculate total sales by region and month
+for (let month = 0; month < months.length; month++) {
+  for (let region = 0; region < regions.length; region++) {
+    totalSalesByRegion[region] += salesData[month][region];
+    totalSalesByMonth[month] += salesData[month][region];
+  }
+}
+
+// Print the sales report
+console.log("Sales Report:");
+console.log("Month\tNorth\tCentral\tSouth\tTotal");
+for (let month = 0; month < months.length; month++) {
+  const monthSales = [months[month]];
+  for (let region = 0; region < regions.length; region++) {
+    monthSales.push(salesData[month][region]);
+  }
+  monthSales.push(totalSalesByMonth[month]);
+  console.log(monthSales.join("\t"));
+}
+
+console.log("Total\t" + totalSalesByRegion.join("\t"));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

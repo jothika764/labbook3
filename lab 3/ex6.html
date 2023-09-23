@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class BankAccount {
+  constructor(name, accountNumber, accountType, initialBalance) {
+    this.name = name;
+    this.accountNumber = accountNumber;
+    this.accountType = accountType;
+    this.balance = initialBalance || 0;
+  }
+
+  deposit(amount) {
+    if (amount > 0) {
+      this.balance += amount;
+      console.log(`${this.name}, you have deposited $${amount}. Your new balance is $${this.balance}`);
+    } else {
+      console.log("Invalid deposit amount. Please enter a positive amount.");
+    }
+  }
+
+  withdraw(amount) {
+    if (amount > 0) {
+      if (this.balance >= amount) {
+        this.balance -= amount;
+        console.log(`${this.name}, you have withdrawn $${amount}. Your new balance is $${this.balance}`);
+      } else {
+        console.log("Insufficient balance to make the withdrawal.");
+      }
+    } else {
+      console.log("Invalid withdrawal amount. Please enter a positive amount.");
+    }
+  }
+
+  displayBalance() {
+    console.log(`Account holder: ${this.name}`);
+    console.log(`Account number: ${this.accountNumber}`);
+    console.log(`Account type: ${this.accountType}`);
+    console.log(`Balance: $${this.balance}`);
+  }
+}
+
+// Example usage:
+const account1 = new BankAccount("John Doe", "123456789", "Savings", 1000);
+account1.displayBalance();
+account1.deposit(500);
+account1.withdraw(200);
+account1.displayBalance();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

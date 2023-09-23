@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="JavaScript">
+        function tot(){
+            var x=parseInt(document.Simple.first.value)
+            var y=parseInt(document.forms[0].elements[1].value)
+            document.Simple.sum.value=x+y
+        }
+    </script>
+    <form name="Simple">
+        <input type="text" size="4" name="first" value=""><br>
+        <input type="text" size="4" name="second" value=""><br>
+        <input type="button" value="Click" onclick="tot();"><br>
+        <input type="text" name="sum" value=" "><br>
+    </form>
+</body>
+</html>

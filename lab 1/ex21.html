@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var counter=0;
+        ID=window.setTimeout("Update();",2000);
+        function Update(){
+            counter++;
+            window.status="The counter is now at"+counter;
+            document.form1.input1.value="The counter is now at "+counter;
+            ID=window.setTimeout("Update();",2000);
+        }
+    </script>
+    <form name="form1">
+        <input type="text" name="input1" size="40"><br>
+        <input type="button" value="reset" onclick="counter=0;"><br>
+        <input type="button" value="stop" onclick="window.clearTimeout(ID);">
+    </form>
+</body>
+</html>

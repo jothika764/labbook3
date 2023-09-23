@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Define a dictionary to store country-capital pairs
+const countryCapitalMap = {
+  "USA": "Washington, D.C.",
+  "Canada": "Ottawa",
+  "United Kingdom": "London",
+  "France": "Paris",
+  "Germany": "Berlin",
+  "Japan": "Tokyo",
+  // Add more country-capital pairs as needed
+};
+
+// Function to get the capital for a given country name
+function getCapital(countryName) {
+  return countryCapitalMap[countryName] || "Capital not found";
+}
+
+// Function to get the country name for a given capital
+function getCountry(capitalName) {
+  for (const country in countryCapitalMap) {
+    if (countryCapitalMap[country] === capitalName) {
+      return country;
+    }
+  }
+  return "Country not found";
+}
+
+// Example usage to get the capital for a country
+const userCountry = "USA"; // Replace with the user's input
+const capital = getCapital(userCountry);
+
+if (capital !== "Capital not found") {
+  console.log(`The capital of ${userCountry} is ${capital}`);
+} else {
+  console.log(`Capital not found for ${userCountry}`);
+}
+
+// Example usage to get the country for a capital
+const userCapital = "Berlin"; // Replace with the user's input
+const country = getCountry(userCapital);
+
+if (country !== "Country not found") {
+  console.log(`The country with capital ${userCapital} is ${country}`);
+} else {
+  console.log(`Country not found for capital ${userCapital}`);
+}
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
